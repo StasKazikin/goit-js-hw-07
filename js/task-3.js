@@ -23,6 +23,7 @@ images.forEach(item => {
     const img = document.createElement('img');
     img.src = item.url;
     img.alt = item.alt;
+    img.style.width = '500px';
     list.append(img);
     gallery.append(list);
 });
