@@ -18,12 +18,15 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 
-images.forEach(item => {
-    const list = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = item.url;
-    img.alt = item.alt;
-    img.style.width = '500px';
-    list.append(img);
-    gallery.append(list);
-});
+// images.forEach(item => {
+//     const list = document.createElement('li');
+//     const img = document.createElement('img');
+//     img.src = item.url;
+//     img.alt = item.alt;
+//     img.style.width = '500px';
+//     list.append(img);
+//     gallery.append(list);
+// });
+
+gallery.insertAdjacentHTML('afterbegin',
+    images.map(img => `<li><img src='${img.url}' alt='${img.alt}' width = '300'></li>`).join(''));
